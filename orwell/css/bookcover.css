@@ -1,0 +1,135 @@
+.body {
+	background: gray;
+}
+
+.grid_container {
+	width: 600px;
+	height: 400px;
+	position: relative;
+	left: 50%;
+	top: 48%; /* for optical centering */
+	margin-top: -50px;
+	margin-left: -100px;
+	z-index: 1;
+	}
+
+.container {
+	width: 400px;
+	height: 600px;
+	border: 1px solid gray;
+	position: absolute;
+	background: #FFFCF7;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+}
+
+.eye {
+width: 250px;
+height: 250px;
+background: transparent;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(02%, -40%) rotate(45deg);
+border-radius: 75% 0;
+cursor: pointer;
+}
+
+.iris {
+width: 70px;
+height: 70px;
+background: #222f3e;
+border-radius: 50%;
+border: 60px solid skyblue;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+.lid {
+width: 200px;
+height: 450px;
+position: absolute;
+color: #FFFCF7;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%) rotate(-45deg);
+z-index: 1;
+overflow: hidden;
+}
+
+.lid span {
+display: block;
+width: 100%;
+height: 0%;
+background: #FFFCF7;
+border-radius: 0 0 60% 60%;
+transition: 0.6s all;
+overflow: hidden;
+}
+
+.eye:hover .lid span {
+	height: 100%;
+}
+
+@keyframes title_fade {
+	0% {opacity: 0; color: red;}
+	50% {opacity: 1; color: red;}
+	100% {opacity: 1; color: red;}
+} 
+
+.title {
+	font-family: 'Futura PT';
+	font-size: 28px;
+	color: firebrick;
+	opacity: 0;
+	animation: title_fade 5s ; 
+	animation-fill-mode: forwards ;
+	position: absolute;
+	transform: translate(335%, 1560%);
+	animation-delay: 2s; 
+
+}
+
+@keyframes first_move { 
+	0% {top: -300px; opacity: 0; color: darkblue;}
+	25% {top: -225px; opacity: 0; color: darkblue;}
+	50% {top: -150px; opacity: 0.25; color: darkblue;} 
+	75% {top: -75px; opacity: 0.5; color: darkblue;} 
+	100% {top: 0px; opacity: 1; color: darkblue;}
+ }
+
+ .first{
+ 	position: absolute; 
+ 	animation: first_move 2s linear;
+	transform: translate(-58%, 1450%);
+ }
+
+ @keyframes last_move { 
+	0% {top: 255px; opacity: 0; color: darkblue;}
+	25% {top: 225px; opacity: 0; color: darkblue;}
+	50% {top: 150px; opacity: 0.25; color: darkblue;} 
+	75% {top: 75px; opacity: 0.5; color: darkblue;} 
+	100% {top: 0px; opacity: 1; color: darkblue;}
+ }
+
+ .last{
+ 	position: absolute; 
+ 	animation: last_move 2s linear;
+	transform: translate(55%, 1450%);
+ }
+
+.author {
+	font-family: 'Futura PT';
+	font-size: 30px;
+	letter-spacing: 3px;
+	color: darkblue;
+}
+
+/* Add animation of first name of author coming down from top of page*/
+/* Add animation of last name of author coming up from the bottom of page*/
+/* Add animation of title fading in to the iris */
+/* Signet classics logo sliding into place ? */
